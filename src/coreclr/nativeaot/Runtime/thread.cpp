@@ -794,7 +794,7 @@ void Thread::HijackReturnAddressWorker(StackFrameIterator* frameIterator, Hijack
 
         m_ppvHijackedReturnAddressLocation = ppvRetAddrLocation;
         m_pvHijackedReturnAddress = pvRetAddr;
-        m_uHijackedReturnValueFlags = ReturnKindToTransitionFrameFlags(retValueKind);
+        m_uHijackedReturnValueFlags = 0;
         *ppvRetAddrLocation = (void*)pfnHijackFunction;
 
         STRESS_LOG2(LF_STACKWALK, LL_INFO10000, "InternalHijack: TgtThread = %llx, IP = %p\n",

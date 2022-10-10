@@ -32,6 +32,7 @@
     <JITToolsRid Condition="'$(JITToolsRid)' == ''">$(JITToolsRidWithoutPlatform)-$(JITToolsRidPlatform)</JITToolsRid>
 
     <JITToolsVersion Condition="'$(JITToolsVersion)' == '' and '$(JITToolsRid)' == 'linux-arm64'">$(runtimelinuxarm64MicrosoftNETCoreRuntimeJITToolsVersion)</JITToolsVersion>
+    <JITToolsVersion Condition="'$(JITToolsVersion)' == '' and '$(JITToolsRid)' == 'linux-arm'">$(runtimelinuxarmMicrosoftNETCoreRuntimeJITToolsVersion)</JITToolsVersion>
     <JITToolsVersion Condition="'$(JITToolsVersion)' == '' and '$(JITToolsRid)' == 'linux-x64'">$(runtimelinuxx64MicrosoftNETCoreRuntimeJITToolsVersion)</JITToolsVersion>
     <JITToolsVersion Condition="'$(JITToolsVersion)' == '' and '$(JITToolsRid)' == 'linux-musl-arm64'">$(runtimelinuxmuslarm64MicrosoftNETCoreRuntimeJITToolsVersion)</JITToolsVersion>
     <JITToolsVersion Condition="'$(JITToolsVersion)' == '' and '$(JITToolsRid)' == 'linux-musl-x64'">$(runtimelinuxmuslx64MicrosoftNETCoreRuntimeJITToolsVersion)</JITToolsVersion>

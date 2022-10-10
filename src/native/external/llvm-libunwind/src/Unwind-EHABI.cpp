@@ -961,7 +961,7 @@ _Unwind_VRS_Set(_Unwind_Context *context, _Unwind_VRS_RegClass regclass,
       if (representation != _UVRSD_UINT32 || regno != 0)
         return _UVRSR_FAILED;
       return __unw_set_reg(cursor, (unw_regnum_t)(UNW_ARM_RA_AUTH_CODE),
-                           *(unw_word_t *)valuep) == UNW_ESUCCESS
+                           *(unw_word_t *)valuep, (unw_word_t *)pos) == UNW_ESUCCESS
                  ? _UVRSR_OK
                  : _UVRSR_FAILED;
       break;
@@ -1137,9 +1137,9 @@ _Unwind_VRS_Pop(_Unwind_Context *context, _Unwind_VRS_RegClass regclass,
         return _UVRSR_FAILED;
       }
       uint32_t pac = *sp++;
-      _Unwind_VRS_Set(context, _UVRSC_CORE, UNW_ARM_SP, _UVRSD_UINT32, &sp);
+      _Unwind_VRS_Set(context, _UVRSC_CORE, UNW_ARM_SP, _UVRSD_UINT32, &sp, NULL);
       return _Unwind_VRS_Set(context, _UVRSC_CORE, UNW_ARM_RA_AUTH_CODE,
-                             _UVRSD_UINT32, &pac);
+                             _UVRSD_UINT32, &pac, NULL);
     }
   }
   _LIBUNWIND_ABORT("unsupported register class");

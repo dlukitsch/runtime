@@ -35,6 +35,8 @@ The .NET Foundation licenses this file to you under the MIT license.
       <CrossCompileArch Condition="$(CrossCompileRid.EndsWith('-x64'))">x86_64</CrossCompileArch>
       <CrossCompileArch Condition="$(CrossCompileRid.EndsWith('-arm64')) and '$(TargetOS)' != 'OSX'">aarch64</CrossCompileArch>
       <CrossCompileArch Condition="$(CrossCompileRid.EndsWith('-arm64')) and '$(TargetOS)' == 'OSX'">arm64</CrossCompileArch>
+      <CrossCompileArch Condition="$(CrossCompileRid.EndsWith('-arm')) and '$(TargetOS)' != 'OSX'">arm</CrossCompileArch>
+
 
       <TargetTriple />
       <TargetTriple Condition="'$(CrossCompileArch)' != ''">$(CrossCompileArch)-linux-gnu</TargetTriple>

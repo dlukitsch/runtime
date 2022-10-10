@@ -125,6 +125,49 @@ struct UNIX_CONTEXT
         lambda((size_t*)&R14());
         lambda((size_t*)&R15());
     }
+    
+#elif defined(TARGET_ARM)
+    uint32_t& R0();
+    uint32_t& R1();
+    uint32_t& R2();
+    uint32_t& R3();
+    uint32_t& R4();
+    uint32_t& R5();
+    uint32_t& R6();
+    uint32_t& R7();
+    uint32_t& R8 ();
+    uint32_t& R9 ();
+    uint32_t& R10();
+    uint32_t& R11();
+    uint32_t& R12();
+    uint32_t& Rsp();
+    uint32_t& Rlr();
+    uint32_t& Rpc();
+
+    uintptr_t GetIp() { return (uintptr_t)Rpc(); }
+    uintptr_t GetSp() { return (uintptr_t)Rsp(); }
+
+    template <typename F>
+    void ForEachPossibleObjectRef(F lambda)
+    {
+        lambda((size_t*)&R0());
+        lambda((size_t*)&R1());
+        lambda((size_t*)&R2());
+        lambda((size_t*)&R3());
+        lambda((size_t*)&R4());
+        lambda((size_t*)&R5());
+        lambda((size_t*)&R6());
+        lambda((size_t*)&R7());
+        lambda((size_t*)&R8());
+        lambda((size_t*)&R9());
+        lambda((size_t*)&R10());
+        lambda((size_t*)&R11());
+        lambda((size_t*)&R12());
+        lambda((size_t*)&Rsp());
+        lambda((size_t*)&Rlr());
+        lambda((size_t*)&Rpc());
+    }
+    
 #else
     PORTABILITY_ASSERT("UNIX_CONTEXT");
 #endif // TARGET_ARM

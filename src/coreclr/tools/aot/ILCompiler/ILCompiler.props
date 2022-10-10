@@ -38,6 +38,7 @@
     <ObjWriterRid Condition="'$(ObjWriterRid)' == ''">$(ObjWriterRidWithoutPlatform)-$(ObjWriterRidPlatform)</ObjWriterRid>
 
     <ObjWriterVersion Condition="'$(ObjWriterVersion)' == '' and '$(ObjWriterRid)' == 'linux-arm64'">$(runtimelinuxarm64MicrosoftNETCoreRuntimeObjWriterVersion)</ObjWriterVersion>
+    <ObjWriterVersion Condition="'$(ObjWriterVersion)' == '' and '$(ObjWriterRid)' == 'linux-arm'">$(runtimelinuxarmMicrosoftNETCoreRuntimeObjWriterVersion)</ObjWriterVersion>
     <ObjWriterVersion Condition="'$(ObjWriterVersion)' == '' and '$(ObjWriterRid)' == 'linux-x64'">$(runtimelinuxx64MicrosoftNETCoreRuntimeObjWriterVersion)</ObjWriterVersion>
     <ObjWriterVersion Condition="'$(ObjWriterVersion)' == '' and '$(ObjWriterRid)' == 'linux-musl-arm64'">$(runtimelinuxmuslarm64MicrosoftNETCoreRuntimeObjWriterVersion)</ObjWriterVersion>
     <ObjWriterVersion Condition="'$(ObjWriterVersion)' == '' and '$(ObjWriterRid)' == 'linux-musl-x64'">$(runtimelinuxmuslx64MicrosoftNETCoreRuntimeObjWriterVersion)</ObjWriterVersion>

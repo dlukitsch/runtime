@@ -48,11 +48,11 @@ ASM_OFFSET(   44,    70, Thread, m_pvHijackedReturnAddress)
 #ifdef HOST_64BIT
 ASM_OFFSET(    0,    78, Thread, m_uHijackedReturnValueFlags)
 #endif
-ASM_OFFSET(   48,    80, Thread, m_pExInfoStackHead)
-ASM_OFFSET(   4c,    88, Thread, m_threadAbortException)
+ASM_OFFSET(   4c,    80, Thread, m_pExInfoStackHead)
+ASM_OFFSET(   50,    88, Thread, m_threadAbortException)
 
-ASM_OFFSET(   50,    90, Thread, m_pThreadLocalModuleStatics)
-ASM_OFFSET(   54,    98, Thread, m_numThreadLocalModuleStatics)
+ASM_OFFSET(   54,    90, Thread, m_pThreadLocalModuleStatics)
+ASM_OFFSET(   58,    98, Thread, m_numThreadLocalModuleStatics)
 
 ASM_SIZEOF(   14,    20, EHEnum)
 
