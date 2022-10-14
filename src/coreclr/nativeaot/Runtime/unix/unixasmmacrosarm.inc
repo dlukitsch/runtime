@@ -262,7 +262,7 @@ C_FUNC(\Name):
         add     r0, pc, r0
         bl      __tls_get_addr(PLT)
         // push data at the end of text section
-        .pushsection .text, MAX_NUMBER_SUBSECTION_TEXT, "aM", %progbits, 4
+        .pushsection .text, MAX_NUMBER_SUBSECTION_TEXT
         .balign 4
 2:
         .4byte  \Var(TLSGD) + (. - 1b - 4)
